@@ -137,7 +137,14 @@ button:hover {
 
 .error {
 	border: 2px solid darkred;
-	background: red;
+	padding: .2em;
+	margin-bottom: .2em;
+}
+
+.errorspan {
+	color: darkred;
+	font-size: .75em;
+	margin-bottom: 100px;
 }
 
 /* ================================= 
@@ -152,6 +159,10 @@ button:hover {
   content: " ";
   display: table;
   clear: both;
+}
+
+.disabled {
+	color: lightblue;
 }
 
 /* ================================= 
