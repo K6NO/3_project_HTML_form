@@ -129,32 +129,24 @@ var timeConflictAndCostCalculator = function() {
             case 'js-frameworks':
                 totalCost +=100;
                 disableWorkshop('express');
-                disableWorkshop('build-tools');
                 break;
             case 'js-libs':
                 totalCost +=100;
                 disableWorkshop('node');
-                disableWorkshop('npm');
                 break;
             case 'express':
                 totalCost +=100;
                 disableWorkshop('js-frameworks');
-                disableWorkshop('build-tools');
                 break;
             case 'node':
                 totalCost +=100;
                 disableWorkshop('js-libs');
-                disableWorkshop('npm');
                 break;
             case 'build-tools':
                 totalCost +=100;
-                disableWorkshop('express');
-                disableWorkshop('js-frameworks');
                 break;
             case 'npm':
                 totalCost +=100;
-                disableWorkshop('node');
-                disableWorkshop('js-libs');
                 break;
         }
     } else {
@@ -163,33 +155,28 @@ var timeConflictAndCostCalculator = function() {
                 totalCost -=200;
                 break;
             case 'js-frameworks':
+                totalCost -=100;
                 enableWorkshop('express');
-                enableWorkshop('build-tools');
                 break;
             case 'js-libs':
                 totalCost -=100;
                 enableWorkshop('node');
-                enableWorkshop('npm');
                 break;
             case 'express':
                 totalCost -=100;
                 enableWorkshop('js-frameworks');
-                enableWorkshop('build-tools');
                 break;
             case 'node':
                 totalCost -=100;
                 enableWorkshop('js-libs');
-                enableWorkshop('npm');
                 break;
             case 'build-tools':
                 totalCost -=100;
-                enableWorkshop('express');
-                enableWorkshop('js-frameworks');
+
                 break;
             case 'npm':
                 totalCost -=100;
-                enableWorkshop('node');
-                enableWorkshop('js-libs');
+
                 break;
         }
     }
