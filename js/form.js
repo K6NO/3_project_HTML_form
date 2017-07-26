@@ -1,7 +1,5 @@
 /**Project 3 - Build an Interactive Form
  */
-
-
 const userName = document.querySelector('#name');
 const userEmail = document.querySelector('#mail');
 const titleSelector = document.querySelector('#title');
@@ -58,8 +56,7 @@ const onSelectTitleChanged = function () {
         otherTitleLabel.style.display = 'none';
         otherTitleTextField.style.display = 'none';
     }
-}
-
+};
 /**
  * Event listener for design change
  */
@@ -98,7 +95,7 @@ const onSelectDesignChanged = function () {
             colorSelector.children[i].style.display = '';
         }
     }
-}
+};
 
 // ”Register for Activities” section of the form
 
@@ -110,13 +107,13 @@ var disableWorkshop = function (workshopName) {
     var workshopName = document.querySelector('input[name=' + workshopName + ']');
     workshopName.disabled = true;
     workshopName.parentElement.classList.add("disabled");
-}
+};
 
 var enableWorkshop = function (workshopName) {
     var workshopName = document.querySelector('input[name=' + workshopName + ']');
     workshopName.disabled = false;
     workshopName.parentElement.classList.remove("disabled");
-}
+};
 
 
 //function checking conflicting times and calculating total cost
@@ -181,7 +178,7 @@ var timeConflictAndCostCalculator = function() {
         }
     }
     totalPriceElement.innerText = totalCost;
-}
+};
 
 
 //adding timeConflictAndCostCalculator as event listener to checkboxes
@@ -218,18 +215,14 @@ var onPaymentOptionsChange = function () {
 paymentOptions.addEventListener('change', onPaymentOptionsChange);
 
 // Form validation:
-
-
-
 // helper function for email validation
 
 var validateEmail = function (email) {
     var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     return re.test(email);
-}
+};
 
 // helper function for checkbox validation
-
 const validateCheckboxes = function () {
     const checkboxes = document.querySelectorAll('.activities input');
     let isValid = false;
@@ -239,17 +232,16 @@ const validateCheckboxes = function () {
         }
     }
     return isValid;
-}
+};
 
 // helper functions for displaying and removing error messages
-
 const displayErrorMessage = function (element, errorMessage) {
     let span = document.createElement('span');
     span.classList.add('errorspan');
     span.innerText = errorMessage;
     element.classList.add('error');
     element.after(span);
-}
+};
 
 const removeErrorMessages = function () {
     var errors = document.querySelectorAll('input.error');
@@ -262,7 +254,7 @@ const removeErrorMessages = function () {
     for (let i = 0; i < errorMessages.length; i++) {
         errorMessages[i].remove();
     }
-}
+};
 
 // form validation
 var validateFormOnSubmit = function (e) {
@@ -312,7 +304,7 @@ var validateFormOnSubmit = function (e) {
             displayErrorMessage(cvvNumber, 'CVV number must be 3 digits.');
         }
     }
-}
+};
 
 // Real time validation of email field
 const validateEmailRealTime = function () {
@@ -325,7 +317,7 @@ const validateEmailRealTime = function () {
     } else {
         removeErrorMessages();
     }
-}
+};
 
 userEmail.addEventListener('input', validateEmailRealTime);
 createOtherTitleTextAndLabel();
